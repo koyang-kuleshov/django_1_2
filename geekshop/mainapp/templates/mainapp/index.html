@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
 <head>
   <meta charset="utf-8">
   <title>Магазин</title>
-  <link rel="stylesheet" type="text/css" href="static/css/style.css">
-  <link rel="stylesheet" href="static/fonts/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href={% static "css/style.css" %}>
+  <link rel="stylesheet" href={% static "fonts/font-awesome/css/font-awesome.css" %}>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -24,7 +25,7 @@
         <h3 class="green">тенденции</h3>
         <h3 class="big"> удобные стулья</h3>
         <p>Новый уровень комфорта. Отличные характеристики.</p>
-        <a href="#" class="button-order">заказать <img src="static/img/arrow.png" alt=""></a>
+        <a href="#" class="button-order">заказать <img src={% static "img/arrow.png" %} alt=""></a>
       </div>
       <div class="navi">
         <a href="#"></a><a href="#"></a><a href="#"></a>
@@ -39,11 +40,11 @@
                     <li class="product-tab product-tab-active">Featured</li>
                     <li class="product-tab">New</li>
                 </ul>
-                <a href="#" class="explore">explore all <img src="static/img/arrow.svg" alt=""> </a> </div> <div class="product-list">
+                <a href="#" class="explore">explore all <img src={% static "img/arrow.svg" %} alt=""> </a> </div> <div class="product-list">
                     <div class="product1">
                         <div class="hover-description1">
                             <a href="#" class="button-order">
-                                <img src="static/img/arrow.svg" alt="" class="hover-button-arrow"></a>
+                              <img src={% static "img/arrow.svg" %} alt="" class="hover-button-arrow"></a>
                             <h3 class="hover-header">Fishnet Chair</h3>
                             <p class="hover-p">Seat and back with upholstery made of cold cure foam
                                 . Steel frame, available in matt powder-coated black
@@ -54,7 +55,7 @@
                     <div class="product2">
                         <div class="hover-description2">
                             <a href="#" class="hover-button">
-                                <img src="static/img/arrow.svg" alt="" class="hover-button-arrow"></a>
+                              <img src={% static "img/arrow.svg" %} alt="" class="hover-button-arrow"></a>
                             <h3 class="hover-header">Fishnet Chair</h3>
                             <p class="hover-p">Seat and back with upholstery made of cold cure foam
                                 . Steel frame, available in matt powder-coated black
@@ -65,7 +66,7 @@
                     <div class="product3">
                         <div class="hover-description3">
                             <a href="#" class="hover-button">
-                                <img src="static/img/arrow.svg" alt="" class="hover-button-arrow"></a>
+                              <img src={% static "img/arrow.svg" %} alt="" class="hover-button-arrow"></a>
                             <h3 class="hover-header">Fishnet Chair</h3>
                             <p class="hover-p">Seat and back with upholstery made of cold cure foam
                                 . Steel frame, available in matt powder-coated black
@@ -76,7 +77,7 @@
                     <div class="product4">
                         <div class="hover-description4">
                             <a href="#" class="hover-button">
-                                <img src="static/img/arrow.svg" alt="" class="hover-button-arrow"></a>
+                              <img src={% static "img/arrow.svg" %} alt="" class="hover-button-arrow"></a>
                             <h3 class="hover-header">Fishnet Chair</h3>
                             <p class="hover-p">Seat and back with upholstery made of cold cure foam
                                 . Steel frame, available in matt powder-coated black
@@ -93,28 +94,28 @@
                 <h3 class="promo-header">Fishnet Chair</h3>
                 <p class="promo-description">Seat and back with upholstery made of cold cure foam. Steel frame, available in matt powder-coated black or highly polished chrome.</p>
                 <div class="promo-button">
-                    <a href="#" class="button-order">Купить <img src="static/img/arrow.svg" alt="" class="arrow"></a></div>
+                    <a href="#" class="button-order">Купить <img src={% static "img/arrow.svg" %} alt="" class="arrow"></a></div>
             </div>
             <div class="promo2">
                 <div class="promo-sub-header">exclusive</div>
                 <h3 class="promo-header">Fishnet Chair</h3>
                 <p class="promo-description">Seat and back with upholstery made of cold cure foam. Steel frame, available in matt powder-coated black or highly polished chrome.</p>
                 <div class="promo-button">
-                    <a href="#" class="button-order">Купить <img src="static/img/arrow.svg" alt="" class="arrow"></a></div>
+                    <a href="#" class="button-order">Купить <img src={% static "img/arrow.svg" %} alt="" class="arrow"></a></div>
             </div>
         </section>
         <section class="trending-product-review padding-site">
             <div class="product-header">
                 <h2 class="tranding-header">Trending Products</h2>
-                <a href="#" class="explore">explore all <img src="static/img/arrow.svg" alt=""> </a>
+                <a href="#" class="explore">explore all <img src={% static "img/arrow.svg" %} alt=""> </a>
                    </div>
             <div class="trending-product-list">
-                    <a href="#" class="trending-product"><img src="static/img/product-11.jpg" alt=""></a>
-                    <a href="#" class="trending-product"><img src="static/img/product-21.jpg" alt=""></a>
-                    <a href="#" class="trending-product"><img src="static/img/product-31.jpg" alt=""></a>
-                    <a href="#" class="trending-product"><img src="static/img/product-41.jpg" alt=""></a>
-                    <a href="#" class="trending-product"><img src="static/img/product-5.jpg" alt=""></a>
-                    <a href="#" class="trending-product"><img src="static/img/product-6.jpg" alt=""></a>
+                    <a href="#" class="trending-product"><img src={% static "img/product-11.jpg" %} alt=""></a>
+                    <a href="#" class="trending-product"><img src={% static "img/product-21.jpg" %} alt=""></a>
+                    <a href="#" class="trending-product"><img src={% static "img/product-31.jpg" %} alt=""></a>
+                    <a href="#" class="trending-product"><img src={% static "img/product-41.jpg" %} alt=""></a>
+                    <a href="#" class="trending-product"><img src={% static "img/product-5.jpg" %} alt=""></a>
+                    <a href="#" class="trending-product"><img src={% static "img/product-6.jpg" %} alt=""></a>
             </div>
         </section>
 
@@ -126,13 +127,9 @@
                 <p class="slider__p">
                     Seat and back with upholstery made of cold cure foam. Steel frame, available in matt powder-coated black
                 </p>
-                <a href="#" class="button-order">Купить <img src="static/img/arrow.svg" alt="" class="arrow"></a>
+                <a href="#" class="button-order">Купить <img src={% static "img/arrow.svg" %} alt="" class="arrow"></a>
             </div>
-            <div class="slider__pagination">
-                <a href="#" class="circle"></a>
-                <a href="#" class="circle circle_active"></a>
-                <a href="#" class="circle"></a>
-            </div>
+            <div class="clear"></div>
         </section>
         <section class="second-product padding-site">
             <div class="large-product">
@@ -140,14 +137,14 @@
                 <h3 class="promo-header">Fishnet Chair</h3>
                 <p class="large-product-description-">Seat and back with upholstery made of cold cure foam. Steel frame, available in matt powder-coated black or highly polished chrome.</p>
                 <div class="promo-button">
-                    <a href="#" class="button-order">Купить <img src="static/img/arrow.svg" alt="" class="arrow"></a></div>
+                    <a href="#" class="button-order">Купить <img src={% static "img/arrow.svg" %} alt="" class="arrow"></a></div>
 
             </div>
             <div class="small-product-list">
-                <div class="small-product-block1" style="background-image:url(static/img/product-2-sm.jpg);">
+                <div class="small-product-block1" style="background-image:url( {% static 'img/product-2-sm.jpg' %} );">
                     <div class="hover-description-small1">
                         <a href="#" class="hover-button">
-                            <img src="static/img/arrow.svg" alt="" class="hover-button-arrow"></a>
+                            <img src={% static "img/arrow.svg" %} alt="" class="hover-button-arrow"></a>
                         <h3 class="hover-header">Fishnet Chair</h3>
                         <p class="hover-p">Seat and back with upholstery made of cold cure foam
                             . Steel frame, available in matt powder-coated black
@@ -155,10 +152,10 @@
                         </p>
                     </div>
                 </div>
-                <div class="small-product-block2" style="background-image:url(static/img/product-3-sm.jpg);">
+                <div class="small-product-block2" style="background-image:url( {% static 'img/product-3-sm.jpg' %} );">
                     <div class="hover-description-small2">
                         <a href="#" class="hover-button">
-                            <img src="static/img/arrow.svg" alt="" class="hover-button-arrow"></a>
+                            <img src={% static "img/arrow.svg" %} alt="" class="hover-button-arrow"></a>
                         <h3 class="hover-header">Fishnet Chair</h3>
                         <p class="hover-p">Seat and back with upholstery made of cold cure foam
                             . Steel frame, available in matt powder-coated black
@@ -166,10 +163,10 @@
                         </p>
                     </div>
                 </div>
-                <div class="small-product-block3" style="background-image:url(static/img/product-4-sm.jpg);">
+                <div class="small-product-block3" style="background-image:url( {% static 'img/product-4-sm.jpg' %} );">
                     <div class="hover-description-small3">
                         <a href="#" class="hover-button">
-                            <img src="static/img/arrow.svg" alt="" class="hover-button-arrow"></a>
+                            <img src={% static "img/arrow.svg" %} alt="" class="hover-button-arrow"></a>
                         <h3 class="hover-header">Fishnet Chair</h3>
                         <p class="hover-p">Seat and back with upholstery made of cold cure foam
                             . Steel frame, available in matt powder-coated black
@@ -177,10 +174,10 @@
                         </p>
                     </div>
                 </div>
-                <div class="small-product-block4" style="background-image:url(static/img/product-5-sm.jpg);">
+                <div class="small-product-block4" style="background-image:url( {% static 'img/product-5-sm.jpg' %} );">
                     <div class="hover-description-small4">
                         <a href="#" class="hover-button">
-                            <img src="static/img/arrow.svg" alt="" class="hover-button-arrow"></a>
+                            <img src={% static "img/arrow.svg" %} alt="" class="hover-button-arrow"></a>
                         <h3 class="hover-header">Fishnet Chair</h3>
                         <p class="hover-p">Seat and back with upholstery made of cold cure foam
                             . Steel frame, available in matt powder-coated black
@@ -198,14 +195,13 @@
                 <p class="slider__p-mobile">
                     Save your favorites and share your style.
                 </p>
-                <a href="#" class="button-mobile"><img src="static/img/app-store.jpg" alt="" class=""></a>
-                <a href="#" class="button-mobile"><img src="static/img/google-play.jpg" alt="" class=""></a>
+                <a href="#" class="button-mobile"><img src={% static "img/app-store.jpg" %} alt="" class=""></a>
+                <a href="#" class="button-mobile"><img src={% static "img/google-play.jpg" %} alt="" class=""></a>
             </div>
         </section>
 
         <div class="clr"></div>
 
-        <!-- <footer class="footer padding-site"> -->
         <footer class="footer">
             <div class="footer-col">
                 <div class="footer-column-1">
@@ -253,7 +249,6 @@
                 <a href="#" class="terms">Terms & Conditions / Privacy policy & Cookies</a>
             </div>
         </footer>
-
   </div>
 </body>
 </html>
