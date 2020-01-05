@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>
+      {% block title %}
+        {{ title|title }}
+      {% ednblock %}
+    </title>
+    {% bloc css %}
+      <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+      <link rel="stylesheet" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
+    {% endblock %}
+
+    {% block js %}
+    {% endblock %}
+  </head>
+  <body>
+      <div class="container">
+        {% block menu %}
+
+        {% endblock %}
+
+        {% block content %}
+
+        {% endblock %}
+
+      </div>
+
+    {% block footer %}
+      <div class="footer">
+        <!-- //FIXIT: Не хватает нескольких div из методички №1 -->
+      </div>
+    {% endblock %}
+  </body>
+</html>
