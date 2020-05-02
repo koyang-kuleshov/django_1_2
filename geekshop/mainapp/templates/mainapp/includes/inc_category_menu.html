@@ -1,0 +1,14 @@
+{% block category_menu %}
+      <div class="links clearfix">
+        <ul class="links-menu">
+          <!-- <li><a href="#" class="active">все</a></li> -->
+          <!-- <li><a href="#">дом</a></li> -->
+          <!-- <li><a href="#">офис</a></li> -->
+          <!-- <li><a href="#">модерн</a></li> -->
+          <!-- <li><a href="#">классика</a></li> -->
+          {% for link in links_menu %}
+              <li><a href="{% url link.href %}" class="{% if request.resolver_match.url_name == link.href %} active {% endif %}">{{ link.name }} </a></li>
+              {% endfor %}
+        </ul>
+      </div>
+{% endblock %}

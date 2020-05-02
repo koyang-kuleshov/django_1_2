@@ -4,6 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+     <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
     <title>
       {% block title %}
         {{ title|title }}
@@ -30,51 +31,52 @@
 
     </div>
 
-{% block footer %}
-  <footer class="footer">
-    <div class="footer-col">
-      <div class="footer-column-1">
-          <h3 class="footer-header">Contact Us</h3>
-          <p class="footer-p">132A Bridge Road Richmond VIC Australia.</p>
-          <p class="footer-p">Talk to us on 1300 132 info@interior.com</p>
-      </div>
-      <h3 class="footer-header">Useful Information</h3>
-      <div class="footer-menu">
-        <ul class="footer-submenu">
-          <li class="footer-menu-link"><a href="#" class="footer-menu-link-a">Sales terms</a></li>
-          <li class="footer-menu-link"><a href="#" class="footer-menu-link-a">Customer care</a></li>
-          <li class="footer-menu-link"><a href="#" class="footer-menu-link-a">Delivery</a></li>
-        </ul>
-        <ul class="footer-submenu">
-          <li class="footer-menu-link"><a href="#" class="footer-menu-link-a">Architect accounts</a></li>
-          <li class="footer-menu-link"><a href="#" class="footer-menu-link-a">Careers</a></li>
-          <li class="footer-menu-link"><a href="#" class="footer-menu-link-a">Exchanges & returns</a></li>
-        </ul>
-      </div>
-      <div class="footer-column-2">
-        </div>
-        <div class="footer-column-3">
-          <h3 class="footer-header">Let’s Stay in Touch!</h3>
-          <p class="footer-p">Suscribe to know about our latest news, products and special offers just for suscribers.</p>
-          <div class="form-email">
-            <form action="#" class="">
-                <input type="email" placeholder="your email address" class="email">
-            </form>
-            <i class="fa fa-paper-plane"></i>
-          </div>
-        </div>
-    </div>
-    <div class="copyright">
-      <p class="copy">© Copyright - INTERIOR {% now "Y" %}. All Rights Reserved.</p>
-      <div class="social">
-          <a href="#" class="social1"></a>
-          <a href="#" class="social2"></a>
-          <a href="#" class="social3"></a>
-          <a href="#" class="social4"></a>
-      </div>
-      <a href="#" class="terms">Terms & Conditions / Privacy policy & Cookies</a>
-    </div>
-  </footer>
-{% endblock %}
+    {% block footer %}
+        <footer class="footer">
+            <div class="footer-col">
+                <div class="footer-column-1">
+                    <h3 class="footer-header">Contact Us</h3>
+                    <p class="footer-p">132A Bridge Road Richmond VIC Australia.</p>
+                    <p class="footer-p">Talk to us on 1300 132 info@interior.com</p>
+                </div>
+                <div class="footer-column-2">
+                    <h3 class="footer-header">Useful Information</h3>
+                    <div class="footer-menu">
+                        <ul class="footer-submenu">
+                            <li class="footer-menu-link"><a href="#" class="footer-menu-link-a">Sales terms</a></li>
+                            <li class="footer-menu-link"><a href="#" class="footer-menu-link-a">Customer care</a></li>
+                            <li class="footer-menu-link"><a href="#" class="footer-menu-link-a">Delivery</a></li>
+                        </ul>
+                        <ul class="footer-submenu">
+                            <li class="footer-menu-link"><a href="#" class="footer-menu-link-a">Architect accounts</a></li>
+                            <li class="footer-menu-link"><a href="#" class="footer-menu-link-a">Careers</a></li>
+                            <li class="footer-menu-link"><a href="#" class="footer-menu-link-a">Exchanges & returns</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-column-3">
+                    <h3 class="footer-header">Let’s Stay in Touch!</h3>
+                    <p class="footer-p">Suscribe to know about our latest news, products and special offers just for suscribers.</p>
+                    <div class="form-email">
+                        <form action="#" class="">
+                            <input type="email" placeholder="your email address" class="email">
+                        </form>
+                   <i class="fa fa-paper-plane"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p class="copy">© Copyright - INTERIOR {% now "Y" %}. All Rights Reserved.</p>
+                <div class="social">
+                    <a href="#" class="social1"></a>
+                    <a href="#" class="social2"></a>
+                    <a href="#" class="social3"></a>
+                    <a href="#" class="social4"></a>
+                </div>
+                <a href="#" class="terms">Terms & Conditions / Privacy policy & Cookies</a>
+            </div>
+        </footer>
+        {% endblock %}
+
   </body>
 </html>

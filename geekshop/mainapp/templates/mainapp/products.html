@@ -1,38 +1,17 @@
-<!DOCTYPE html>
 {% extends 'mainapp/base.html' %}
 {% load staticfiles %}
-<html>
-<head>
-  <title>
     {% block title %}
-      Каталог
+        {{ title }}
     {% endblock %}
-  </title>
 </head>
 <body>
   <div class="container">
-    <div class="hero-white">
-      <div class="header clearfix">
-        <a href="/" class="logo"></a>
-        <ul class="menu">
-          <li><a href="/">домой</a></li>
-          <li><a href="/products/" class="active">продукты</a></li>
-          <li><a href="/contacts/">контакты</a></li>
-        </ul>
-        <a href="#" class="search"></a>
-        <a href="#" class="basket"></a>
-      </div>
+    {% block content %}
+   <div class="hero-white">
+      {% include 'mainapp/includes/inc_mainmenu.html' %}
     </div>
     <div class="details">
-      <div class="links clearfix">
-        <ul class="links-menu">
-          <li><a href="#" class="active">все</a></li>
-          <li><a href="#">дом</a></li>
-          <li><a href="#">офис</a></li>
-          <li><a href="#">модерн</a></li>
-          <li><a href="#">классика</a></li>
-        </ul>
-      </div>
+      {% include 'mainapp/includes/inc_category_menu.html' %}
     <div class="details-products">
       <div class="details-slider">
         <div class="slider-product">
@@ -110,32 +89,4 @@
     </div>
   </div>
   <div class="clr"></div>
-  <div class="footer">
-        <div class="clearfix">
-            <div class="text-footer">
-                <h3>контакты</h3>
-            </div>
-            <div class="text-footer">
-                <h3>полезная информация</h3>
-            </div>
-            <div class="text-footer clearfix">
-                <h3>Оставайтесь на связи</h3>
-                <p>Подписаться на новости и рассылки</p>
-                <form>
-                    <input type="email" name="email" placeholder="ваш email">
-                    <a href="#"><i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i></a>
-                </form>
-            </div>
-        </div>
-        <p class="small">&copy; GB 2017</p>
-        <div class="social">
-            <a href="#" class="social1"></a>
-            <a href="#" class="social2"></a>
-            <a href="#" class="social3"></a>
-            <a href="#" class="social4"></a>
-        </div>
-        <p class="small">Положения &amp; Условия  /  Конфиденциальность &amp; Cookies</p>
-    </div>
-
-</body>
-</html>
+  {% endblock %}
