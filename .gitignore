@@ -11,6 +11,9 @@ venv/
 # Migrations
 migrations/
 
+# dbsqlite3
+*.sqlite3
+
 # Distribution / packaging
 bin/
 build/
