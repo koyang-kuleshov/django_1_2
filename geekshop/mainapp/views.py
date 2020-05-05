@@ -7,10 +7,14 @@ def main(requests):
     spam = list(Product.objects.all())
     random.shuffle(spam)
     product_list = spam[:4]
+    trending_products = spam[4:10]
+    small_products = spam[10:14]
     title = 'Интернет-магазин мебели'
     context = {
         'title': title,
         'product_list': product_list,
+        'trending_products': trending_products,
+        'small_products': small_products,
     }
     return render(requests, 'mainapp/index.html', context=context)
 
