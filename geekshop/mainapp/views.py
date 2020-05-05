@@ -1,13 +1,16 @@
+import random
 from django.shortcuts import render
 from .models import ProductCategory, Product
 
 
 def main(requests):
-    products = Product.objects.all()
+    spam = list(Product.objects.all())
+    random.shuffle(spam)
+    product_list = spam[:4]
     title = 'Интернет-магазин мебели'
     context = {
         'title': title,
-        'products': products,
+        'product_list': product_list,
     }
     return render(requests, 'mainapp/index.html', context=context)
 
@@ -15,11 +18,11 @@ def main(requests):
 def products(requests, pk=None):
     title = 'Продукты интернет-магазина'
     links_menu = ProductCategory.objects.all()
-    same_products = Product.objects.all()[:3]
+    product_list = Product.objects.all()[:4]
     context = {
         'title': title,
         'links_menu': links_menu,
-        'same_products': same_products,
+        'product_list': product_list,
     }
     return render(requests, 'mainapp/products.html', context=context)
 

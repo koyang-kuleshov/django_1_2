@@ -30,53 +30,22 @@
                     <li class="product-tab">New</li>
                 </ul>
                 <a href="#" class="explore">explore all <img src="{% static 'img/arrow.svg' %}" alt=""></a></div>
+
                 <div class="product-list">
                     <!-- TODO: Сделать вывод товаров в цикле -->
-                    <div class="product1">
-                        <div class="hover-description1">
-                            <!-- <a href="#" class="button-order"> -->
+                    {% for product in product_list %}
+                    <div class="product">
+                        <img src="{{ product.image.url }}" class="product-img">
+                        <div class="hover-description">
                             <a href="#" class="hover-button">
                               <img src="{% static 'img/arrow.svg' %}" alt="" class="hover-button-arrow"></a>
-                            <h3 class="hover-header">Fishnet Chair</h3>
-                            <p class="hover-p">Seat and back with upholstery made of cold cure foam
-                                . Steel frame, available in matt powder-coated black
-                                or highly polished chrome.
+                            <h3 class="hover-header">{{ product.name }}</h3>
+                            <p class="hover-p"> {{ product.short_desc }}
                             </p>
                         </div>
                     </div>
-                    <div class="product2">
-                        <div class="hover-description2">
-                            <a href="#" class="hover-button">
-                              <img src="{% static 'img/arrow.svg' %}" alt="" class="hover-button-arrow"></a>
-                            <h3 class="hover-header">Fishnet Chair</h3>
-                            <p class="hover-p">Seat and back with upholstery made of cold cure foam
-                                . Steel frame, available in matt powder-coated black
-                                or highly polished chrome.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="product3">
-                        <div class="hover-description3">
-                            <a href="#" class="hover-button">
-                              <img src="{% static 'img/arrow.svg' %}" alt="" class="hover-button-arrow"></a>
-                            <h3 class="hover-header">Fishnet Chair</h3>
-                            <p class="hover-p">Seat and back with upholstery made of cold cure foam
-                                . Steel frame, available in matt powder-coated black
-                                or highly polished chrome.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="product4">
-                        <div class="hover-description4">
-                            <a href="#" class="hover-button">
-                              <img src="{% static 'img/arrow.svg' %}" alt="" class="hover-button-arrow"></a>
-                            <h3 class="hover-header">Fishnet Chair</h3>
-                            <p class="hover-p">Seat and back with upholstery made of cold cure foam
-                                . Steel frame, available in matt powder-coated black
-                                or highly polished chrome.
-                            </p>
-                        </div>
-                    </div>
+                    {% endfor %}
+
             </div>
         </section>
 
