@@ -22,11 +22,11 @@ def main(requests):
 def products(requests, pk=None):
     title = 'Продукты интернет-магазина'
     links_menu = ProductCategory.objects.all()
-    product_list = Product.objects.all()[:4]
+    same_products = Product.objects.all()[:3]
     context = {
         'title': title,
         'links_menu': links_menu,
-        'product_list': product_list,
+        'same_products': same_products,
     }
     return render(requests, 'mainapp/products.html', context=context)
 

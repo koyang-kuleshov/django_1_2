@@ -1071,6 +1071,10 @@ td:first-child {
     display: block;
 }
 
+.related-product-img {
+    height: 370px;
+    weight: 370px;
+}
 /* Мой макет */
 
 .padding-site {
