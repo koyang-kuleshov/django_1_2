@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Освещение",
+    "description": "Лампы и светильники",
+    "category_image": "category_images/product-1.jpg"
+  },
+  {
+    "name": "Стулья",
+    "description": "Стулья и столы",
+    "category_image": "category_images/product-4.jpg"
+  },
+  {
+    "name": "Бытовые приборы",
+    "description": "Бытовые приборы для дома",
+    "category_image": "category_images/product-3.jpg"
+  },
+  {
+    "name": "Мягкая мебель",
+    "description": "Кресла и диваны",
+    "category_image": "category_images/product-2.jpg"
+  }
+]

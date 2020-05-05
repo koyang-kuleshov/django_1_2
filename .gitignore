@@ -9,7 +9,7 @@ __pycache__/
 venv/
 
 # Migrations
-migrations/
+# migrations/
 
 # dbsqlite3
 *.sqlite3
