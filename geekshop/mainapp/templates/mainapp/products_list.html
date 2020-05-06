@@ -1,0 +1,35 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+    {% block title %}
+      {{ title|title }}
+    {% endblock %}
+
+  <div class="container">
+    {% block content %}
+      <div class="hero-white">
+        {% include 'mainapp/includes/inc_mainmenu.html' %}
+      </div>
+      <div class="details">
+        {% include 'mainapp/includes/inc_category_menu.html' %}
+      <section class="product-review padding-site">
+        <div class="products-title">
+          <h2>
+            Категория: "{{ category.name|title }}"
+          </h2>
+        </div>
+        <div class="product-list">
+            {% for product in products %}
+              <div class="product">
+                <img src="{{ product.image.url }}" alt="{{ product.short_desc }}" class="product-img">
+                <div class="hover-description">
+                  <a href="#" class="hover-button">
+                    <img src="{% static 'img/arrow.svg' %}" alt="" class="hover-button-arrow"></a>
+                    <h3 class="hover-header">{{ product.name }}</h3>
+                    <p class="hover-p">{{ product.short_desc }}</p>
+                  </div>
+              </div>
+            {% endfor %}
+      </div>
+  </section>
+  <div class="clr"></div>
+  {% endblock %}

@@ -1,11 +1,11 @@
 {% extends 'mainapp/base.html' %}
 {% load staticfiles %}
     {% block title %}
-        {{ title }}
+        {{ title|title }}
     {% endblock %}
-</head>
-<body>
+
   <div class="container">
+
     {% block content %}
    <div class="hero-white">
       {% include 'mainapp/includes/inc_mainmenu.html' %}

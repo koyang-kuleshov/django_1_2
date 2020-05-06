@@ -9,6 +9,7 @@
     <br>
     <input class="form-control" type="submit" value="Зарегестрироваться">
     </form>
-    <button class="btn btn-round form-control last">На главную</button>
+    <button class="btn btn-round form-control last"><a href="{% url 'main' %}">На главную</a>
+    </button>
     <div class="user_avatar"><img =src="/media/{{ user.avatar }}"></div>
     {% endblock %}
