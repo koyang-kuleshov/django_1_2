@@ -80,14 +80,23 @@ html, body {
     top: 63px;
     left: 1176px;
 }
+
 .basket {
-display: block;
-    width: 23px;
-    height: 23px;
-    background-image: url(../img/basket.png);
+    display: flex;
     position: absolute;
     top: 63px;
     left: 1210px;
+}
+.basket-img {
+    width: 23px;
+    height: 23px;
+}
+
+.basket-qty {
+    margin-left: 10px;
+    margin-top: -3px;
+    font-size: x-large;
+    text-decoration: none;
 }
 
 .clearfix:after {

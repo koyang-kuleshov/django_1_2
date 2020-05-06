@@ -1,3 +1,4 @@
+{% load staticfiles %}
 {% block menu %}
   <div class="header clearfix">
   <a href="{% if request.resolver_match.url_name == 'main' %}#{% else %}{% url 'main' %}{% endif %}" class="logo"></a>
@@ -34,6 +35,12 @@
     </li>
     </ul>
     <a href="#" class="search"></a>
-    <a href="#" class="basket"></a>
+    <div class="basket">
+        <a href="{% url 'basket:view' %}" class="">
+        <img src="{% static 'img/basket.png' %}" class="basket-img"></a>
+            <span class="basket-qty">
+            {% if basket %}{{basket|length }}{% endif %}</a>
+            </span>
+    </div>
   </div>
 {% endblock %}

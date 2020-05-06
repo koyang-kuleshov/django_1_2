@@ -22,7 +22,7 @@
               <div class="product">
                 <img src="{{ product.image.url }}" alt="{{ product.short_desc }}" class="product-img">
                 <div class="hover-description">
-                  <a href="#" class="hover-button">
+                  <a href="{% url 'basket:add' product.pk %}" class="hover-button">
                     <img src="{% static 'img/arrow.svg' %}" alt="" class="hover-button-arrow"></a>
                     <h3 class="hover-header">{{ product.name }}</h3>
                     <p class="hover-p">{{ product.short_desc }}</p>
