@@ -364,6 +364,11 @@ html, body {
     line-height: 36px;
 }
 
+.controll {
+    width: 70px;
+    heigh: 70px;
+}
+
 .trending {
     padding-left: 83px;
     padding-right: 83px;
