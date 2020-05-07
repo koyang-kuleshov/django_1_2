@@ -16,13 +16,17 @@
       <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
       {% endblock %}
       {% block js %}
-
+        <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'js/basket_scripts.js' %}"></script>
       {% endblock %}
   </head>
   <body>
     <div class="container">
         <div class="login">
-            <div class="h2 text-center head">{{ title | title }}</div>
+            <div class="h2 text-center head">Корзина {% if user.first_name %} {{ user.first_name | title }}
+                                                     {% else %}Пользователь
+                                                     {% endif %}
+            </div>
         </div>
         {% block content %}
 

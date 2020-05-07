@@ -36,7 +36,7 @@
                     <div class="product">
                         <img src="{{ product.image.url }}" class="product-img">
                         <div class="hover-description">
-                            <a href="#" class="hover-button">
+                            <a href="{% url 'products:product' product.pk %}" class="hover-button">
                               <img src="{% static 'img/arrow.svg' %}" alt="" class="hover-button-arrow"></a>
                             <h3 class="hover-header">{{ product.name }}</h3>
                             <p class="hover-p"> {{ product.short_desc }}
@@ -72,7 +72,7 @@
                    </div>
             <div class="trending-product-list">
                 {% for trend in trending_products %}
-                    <a href="#" class="trending-product"><img src="{{ trend.image.url }}" alt="{{ trend.short_desc }}" class="trend-img"></a>
+                    <a href="{% url 'products:product' trend.pk %}" class="trending-product"><img src="{{ trend.image.url }}" alt="{{ trend.short_desc }}" class="trend-img"></a>
                     {% endfor %}
             </div>
         </section>
@@ -103,7 +103,7 @@
                 <div class="small-product-block">
                     <img src="{{ small_product.image.url }}" class="small-product-img">
                     <div class="hover-description-small">
-                        <a href="#" class="hover-button">
+                        <a href="{% url 'products:product' small_product.pk %}" class="hover-button">
                             <img src="{% static 'img/arrow.svg' %}" alt="" class="hover-button-arrow"></a>
                         <h3 class="hover-header">{{ small_product.name }}</h3>
                         <p class="hover-p">{{ small_product.short_desc }}</p>

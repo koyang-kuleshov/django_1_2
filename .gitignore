@@ -48,8 +48,9 @@ coverage.xml
 .project
 .pydevproject
 
-# Rope
+# Rope and other stuff
 .ropeproject
+UltiSnips/
 
 # Django stuff:
 *.log

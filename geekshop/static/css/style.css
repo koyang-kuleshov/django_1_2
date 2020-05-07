@@ -920,11 +920,13 @@ td:first-child {
     padding-right: 98px;
     margin-top: 98px;
     height: 651px;
+    margin-bottom: 30px;
 }
 .details-slider {
     width: 570px;
     float: left;
     margin-right: 30px;
+    /* margin-bottom: 30px; */
 }
 .slider-product {
     width: 570px;
@@ -987,6 +989,7 @@ td:first-child {
     font-weight: 300;
     line-height: 48px;
     text-align: center;
+    margin-top: 20px;
 }
 .description .price span {
     color:  #212121;
@@ -1667,4 +1670,35 @@ display: block;
     font-size: 24px;
     height: 30px;
     margin: 20px 20px 40px 20px;
+}
+
+.basket-list {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.basket-cart {
+    display: flex;
+    flex-direction: row;
+}
+
+.basket-image {
+    width: 400px;
+    height: 300px;
+ }
+
+.basket-img-page {
+    position: relative;
+    width: 270px;
+    height: 270px;
+    top: 10px;
+}
+
+.basket-record {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
 }
