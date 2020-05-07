@@ -33,14 +33,19 @@
             <a href="{% url 'auth:login' %}">войти</a>
         {% endif %}
     </li>
-    </ul>
-    <a href="#" class="search"></a>
-    <div class="basket">
+    <li class="search-link">
+        <a href="#"><img src="{% static '/img/search.png' %}" class="search"></a>
+    </li>
+    <li class="basket">
         <a href="{% url 'basket:view' %}" class="">
         <img src="{% static 'img/basket.png' %}" class="basket-img"></a>
             <span class="basket-qty">
-            {% if basket %}{{basket|length }}{% endif %}</a>
+                {% if basket %}
+                {{ basket.0.total_cost | floatformat:0 }} руб.</a>
+                {{ basket.0.total_quantity | floatformat:0 }}{% endif %} шт.</a>
             </span>
-    </div>
+    </li>
+    </ul>
+
   </div>
 {% endblock %}

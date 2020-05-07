@@ -14,12 +14,18 @@ class Basket(models.Model):
     add_datetime = models.DateTimeField(verbose_name='Время',
                                         auto_now_add=True)
 
-    # TODO: Реализовать методы, которые отдают общее количество и сумму товаров
-    # в корзине пользователя
     @property
-    def basket_sum(self):
-        pass
+    def basket_cost(self):
+        return self.product.price * self.quantity
 
     @property
-    def basket_qty(self):
-        pass
+    def total_quantity(self):
+        _items = Basket.objects.filter(user=self.user)
+        _total_quantity = sum(list(map(lambda x: x.quantity, _items)))
+        return _total_quantity
+
+    @property
+    def total_cost(self):
+        _items = Basket.objects.filter(user=self.user)
+        _total_cost = sum([x.basket_cost for x in _items])
+        return _total_cost

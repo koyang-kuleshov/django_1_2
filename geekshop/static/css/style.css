@@ -60,6 +60,8 @@ html, body {
     font-weight: 700;
     border-bottom: 3px solid #212121;
 }
+
+
 .menu a:hover {
     color: #212121;
     font-weight: 700;
@@ -71,30 +73,39 @@ html, body {
     border-bottom: 3px solid #212121;
 }
 
+.search-link a:hover {
+    border-bottom: none;
+}
+
 .search {
     display: block;
     width: 23px;
     height: 23px;
-    background-image: url(../img/search.png);
     position: absolute;
     top: 63px;
-    left: 1176px;
+    border-bottom: 0px;
 }
 
 .basket {
     display: flex;
-    position: absolute;
     top: 63px;
     left: 1210px;
 }
+
+.basket a:hover{
+    border-bottom: none;
+}
 .basket-img {
+    display: block;
+    position: absolute;
     width: 23px;
     height: 23px;
+    top: 63px;
 }
 
 .basket-qty {
-    margin-left: 10px;
-    margin-top: -3px;
+    margin-left: 30px;
+    margin-top: -5px;
     font-size: x-large;
     text-decoration: none;
 }
