@@ -65,11 +65,13 @@ html, body {
 .menu a:hover {
     color: #212121;
     font-weight: 700;
+    text-decoration: none;
     border-bottom: 3px solid #212121;
 }
 .menu a:active {
     color: #8c8c8c;
     font-weight: 700;
+    text-decoration: none;
     border-bottom: 3px solid #212121;
 }
 
@@ -1701,4 +1703,101 @@ display: block;
     flex-direction: column;
     width: 100%;
     padding: 20px;
+}
+
+.admin-menu {
+    list-style: none;
+    margin: 20px auto;
+}
+
+.admin-menu li {
+    float: left;
+}
+.admin-menu a {
+    color: #8c8c8c;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: right;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 13px;
+}
+.admin-menu .active {
+    color: #212121;
+    font-weight: 700;
+    border-bottom: 3px solid #212121;
+}
+
+.admin-menu a:hover {
+    color: #212121;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 3px solid #212121;
+}
+.admin-menu a:active {
+    color: #8c8c8c;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 3px solid #212121;
+}
+
+.users-list {
+    padding-top: 50px;
+}
+
+.new-user {
+    margin: 20px auto;
+ }
+
+.user-record {
+    list-style-type: none;
+    margin: 0px auto 30px;
+}
+
+.user-role {
+    margin: 10px auto;
+}
+
+.categories-list {
+    padding-top: 50px;
+}
+.new-category {
+    margin: 20px auto;
+ }
+
+.category-record {
+    list-style-type: none;
+    margin: 0px auto 30px;
+}
+
+.category-name {
+    margin-top: 10px;
+}
+
+.category-actions {
+    margin: 10px auto 30px;
+}
+
+.products-list {
+    padding-top: 50px;
+}
+.new-product {
+    margin: 20px auto;
+ }
+
+.product-record {
+    list-style-type: none;
+    margin: 0px auto 30px;
+}
+
+.product-name {
+    margin-top: 10px;
+}
+
+.product-actions {
+    margin: 10px auto 30px;
+}
+
+.not_active {
+    opacity: 0.5;
 }

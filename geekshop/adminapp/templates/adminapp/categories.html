@@ -1,0 +1,34 @@
+{% extends 'adminapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+  <div class="categories-list">
+    <button class="new-category">
+      <a href="{% url 'admin:category_create' %}">Новая категория</a>
+    </button>
+    {% for object in objects %}
+      <div class="category-record {% if not object.is_active %}not_active {% endif %}">
+        <img src="/media/{{ object.category_image|default:'users_avatars/default.jpg' }}" alt="{{ object.name }}" class="user-avatar-img">
+        <div class="category-name">
+          {{ object.name|title }}
+        </div>
+
+        <div class="category-actions">
+          <button>
+            <a href="{% url 'admin:products' object.pk %}">Товары категории</a>
+          </button>
+          <button>
+            <a href="{% url 'admin:category_update' object.pk %}">Редактировать</a>
+          </button>
+          <button>
+            <a href="{% url 'admin:category_delete' object.pk %}">Удалить</a>
+          </button>
+        </div>
+
+        <div class="category-desc">
+          {{object.description|capfirst }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
