@@ -1,5 +1,6 @@
 {% extends 'authapp/base.html' %}
 {% load staticfiles %}
+{% load my_tags %}
 
 {% block content %}
     <div class="product-read">
@@ -7,7 +8,7 @@
             Продукты<strong>{{ object.category.name|capfirst }} /
                 {{ object.name|capfirst }}</strong>
         </div>
-        <img src="/media/{{ object.image|default:'products_images/default.jpg' }}" alt="{{ object.name }}">
+        <img src="{{ object.image|media_folder_products }}" alt="{{ object.name }}">
         <div class="summary">
             <b>Цена</b>
             <p>{{ object.price }} руб.</p>

@@ -4,11 +4,11 @@
 {% block content %}
   <form class="form-horizontal" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ update_form.as_p }}
+    {{ form.as_p }}
     <input class="btn btn-round form-control last">
   </form>
   <button class="btn btn-round from-control last">
-    <a href="{% url 'admin:products' category.pk %}">
+    <a href="{% url 'admin:products' category %}">
       К списку товаров
     </a>
   </button>
