@@ -1801,3 +1801,20 @@ display: block;
 .not_active {
     opacity: 0.5;
 }
+
+.product-page {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.paginator {
+    display: block;
+    text-align: center;
+    font-size: x-large;
+}
+
+.paginator a {
+    text-decoration: none;
+    color: black
+}

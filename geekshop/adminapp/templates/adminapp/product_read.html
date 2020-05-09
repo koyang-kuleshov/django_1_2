@@ -1,0 +1,48 @@
+{% extends 'authapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="product-read">
+        <div class="product-name">
+            Продукты<strong>{{ object.category.name|capfirst }} /
+                {{ object.name|capfirst }}</strong>
+        </div>
+        <img src="/media/{{ object.image|default:'products_images/default.jpg' }}" alt="{{ object.name }}">
+        <div class="summary">
+            <b>Цена</b>
+            <p>{{ object.price }} руб.</p>
+            <b> Количество </b>
+            <p> {{ object.quantity }}</p>
+            <b>В каталоге</b>
+        <p>{% if object.is_active %}Да{% else %}Нет{% endif %}</p>
+        <p>
+            <button>
+                <a href="{% url 'admin:product_update' object.pk %}">
+                    Редактирвать
+                </a>
+            </button>
+        </p>
+        <p>
+            <button>
+                <a href="{% url 'admin:product_delete' object.pk %}">
+                Удалить
+                </a>
+            </button>
+        </p>
+        <p>
+            <button>
+                <a href="{% url 'admin:products' object.category.pk %}">
+                    К списку товаров
+                </a>
+            </button>
+        </p>
+        </div>
+        <div class="product_desc">
+            <b>Краткая информация</b>
+            <p>{{ object.short_desc }}</p>
+            <br><br>
+            <b>Подробная информация</b>
+            <p>{{ object.description }}</p>
+        </div>
+        </div>
+{% endblock %}

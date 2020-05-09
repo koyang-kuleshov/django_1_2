@@ -12,12 +12,10 @@
       <div class="details">
         {% include 'mainapp/includes/inc_category_menu.html' %}
       <section class="product-review padding-site">
-        <div class="products-title">
-          <h2>
+          <h2 class="products-title">
             Категория: "{{ category.name|title }}"
           </h2>
-        </div>
-        <div class="product-list">
+        <div class="product-page">
             {% for product in products %}
               <div class="product">
                 <img src="{{ product.image.url }}" alt="{{ product.short_desc }}" class="product-img">
@@ -29,7 +27,20 @@
                   </div>
               </div>
             {% endfor %}
-      </div>
+        </div>
+        <div class="paginator">
+            {% if products.has_previous %}
+                <a href="{% url 'products:page' category.pk products.previous_page_number %}">
+                <</a>
+            {% endif %}
+                <span class="current">
+                      &nbsp;страница {{ products.number }} из {{ products.paginator.num_pages }}
+                </span>&nbsp;
+            {% if products.has_next %}
+                <a href="{% url 'products:page' category.pk products.next_page_number %}">
+                ></a>
+            {% endif %}
+        </div>
   </section>
   <div class="clr"></div>
   {% endblock %}
