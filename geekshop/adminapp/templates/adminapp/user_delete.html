@@ -3,10 +3,10 @@
 
 {% block content %}
     <div class="user-delete">
-        Вы уверены, что хотите удалить {{ user_to_delete.username }}?
+        Вы уверены, что хотите удалить {{ object.username }}?
     </div>
 
-    <form action="{% url 'admin:user_delete' user_to_delete.pk %}" method="POST">
+    <form action="{% url 'admin:user_delete' object.pk %}" method="POST">
     {% csrf_token %}
     <input class="btn btn-danger" type="submit" value="Удалить">
     </form>
