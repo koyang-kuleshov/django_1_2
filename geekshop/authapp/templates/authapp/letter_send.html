@@ -1,0 +1,8 @@
+{% extends 'authapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <h3> {{ txt }}</h3>
+    <br>
+    <button class="btn btn-round form control"><a href="{% url 'main' %}">На главную</a></button>
+    {% endblock %}
