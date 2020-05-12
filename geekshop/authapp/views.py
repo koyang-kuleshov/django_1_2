@@ -3,9 +3,10 @@ from django.contrib import auth
 from django.urls import reverse
 from django.core.mail import send_mail
 from django.conf import settings
+from django.db import transaction
 
 from authapp.forms import ShopUserLoginForm, ShopUserRegisterForm, \
-    ShopUserEditForm
+    ShopUserEditForm, ShopUserProfileEditForm
 from authapp.models import ShopUser
 
 
@@ -64,6 +65,7 @@ def register(request):
     return render(request, 'authapp/register.html', context=context)
 
 
+@transaction.atomic
 def edit(request):
     title = 'Редактирование пользователя'
     if request.method == 'POST':
@@ -71,12 +73,22 @@ def edit(request):
             request.POST,
             request.FILES,
             instance=request.user)
-        if edit_form.is_valid():
+        profile_form = ShopUserProfileEditForm(
+            request.POST, request.FILES,
+            instance=request.user.shopuserprofile
+        )
+        if edit_form.is_valid() and profile_form.is_valid():
             edit_form.save()
             return HttpResponseRedirect(reverse('auth:login'))
     else:
         edit_form = ShopUserRegisterForm(instance=request.user)
-    context = {'title': title, 'edit_form': edit_form}
+        profile_form = ShopUserProfileEditForm(
+            instance=request.user.shopuserprofile)
+    context = {
+        'title': title,
+        'edit_form': edit_form,
+        'profile_form': profile_form
+    }
     return render(request, 'authapp/edit.html', context=context)
 
 
