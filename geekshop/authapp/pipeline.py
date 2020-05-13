@@ -25,6 +25,7 @@ def save_user_profile(backend, user, response, *args, **kwargs):
                                   access_token=response['access_token'],
                                   v='5.92')),
                           None))
+    # TODO: Get user lang https://vk.com/dev/account.getInfo
     resp = requests.get(api_url)
     if resp.status_code != 200:
         return
@@ -42,5 +43,7 @@ def save_user_profile(backend, user, response, *args, **kwargs):
         if age < 18:
             user.delete()
             raise AuthForbidden('social_core.backends.vk.VKOAuth2')
+        else:
+            user.age = age
 
     user.save()
