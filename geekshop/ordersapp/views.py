@@ -91,7 +91,7 @@ class OrderItemsUpdate(UpdateView):
     success_url = reverse_lazy('ordersapp:orders_list')
 
     def get_context_data(self, **kwargs):
-        data = super(OrderItemsCreate, self).get_context_data(**kwargs)
+        data = super(OrderItemsUpdate, self).get_context_data(**kwargs)
         OrderFormSet = inlineformset_factory(Order,
                                              OrderItem,
                                              form=OrderItemForm,
@@ -105,7 +105,7 @@ class OrderItemsUpdate(UpdateView):
             for form in formset.forms:
                 if form.instance.pk:
                     form.initial['price'] = form.instance.product.price
-            data['orderitems'] = OrderFormSet(instance=self.object)
+            data['orderitems'] = formset
         return data
 
     def form_valid(self, form):
@@ -118,7 +118,7 @@ class OrderItemsUpdate(UpdateView):
                 orderitems.save()
         if self.object.get_total_cost() == 0:
             self.object.delete()
-        return super(OrderItemsCreate, self).form_valid(form)
+        return super(OrderItemsUpdate, self).form_valid(form)
 
 
 class OrderDelete(DeleteView):
