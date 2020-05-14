@@ -6,12 +6,6 @@ from .models import ProductCategory, Product
 from basketapp.models import Basket
 
 
-def get_basket(user):
-    if user.is_authenticated:
-        return Basket.objects.filter(user=user)
-    else:
-        return []
-
 
 def get_hot_product():
     products = Product.objects.all()
@@ -31,16 +25,12 @@ def main(request):
     trending_products = spam[4:10]
     small_products = spam[10:14]
     title = 'Интернет-магазин мебели'
-    basket = get_basket(request.user)
 
-    if request.user.is_authenticated:
-        basket = Basket.objects.filter(user=request.user)
     context = {
         'title': title,
         'product_list': product_list,
         'trending_products': trending_products,
         'small_products': small_products,
-        'basket': basket
     }
     return render(request, 'mainapp/index.html', context=context)
 
@@ -49,7 +39,6 @@ def products(request, pk=None, page=1):
     title = 'Продукты интернет-магазина'
     links_menu = ProductCategory.objects.all()
     hot_product = get_hot_product()
-    basket = get_basket(request.user)
 
     if pk is not None:
         if pk == 0:
@@ -81,7 +70,6 @@ def products(request, pk=None, page=1):
             'links_menu': links_menu,
             'category': category,
             'products': products_paginator,
-            'basket': basket,
         }
         return render(request, 'mainapp/products_list.html', context)
 
@@ -90,7 +78,6 @@ def products(request, pk=None, page=1):
         'links_menu': links_menu,
         'hot_product': hot_product,
         'same_products': get_same_products(hot_product),
-        'basket': basket,
     }
 
     return render(request, 'mainapp/products.html', context=context)
@@ -103,17 +90,14 @@ def product(request, pk):
         'title': title,
         'links_menu': ProductCategory.objects.all(),
         'product': get_object_or_404(Product, pk=pk),
-        'basket': get_basket(request.user)
     }
 
     return render(request, 'mainapp/product.html', content)
 
 
 def contacts(request):
-    basket = get_basket(request.user)
 
     context = {
         'title': 'Контакты интернет-магазина',
-        'basket': basket
     }
     return render(request, 'mainapp/contacts.html', context=context)

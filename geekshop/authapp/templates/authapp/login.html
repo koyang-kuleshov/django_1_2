@@ -14,4 +14,9 @@
     <a href="{% url 'auth:register' %}">Зарегестрироваться</a>
     </button>
     </form>
+    <button>
+        <a href="{% url 'social:begin' 'vk-oauth2' %}?next=/">
+            Войти через контакт
+        </a>
+    </button>
     {% endblock %}

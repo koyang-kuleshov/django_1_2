@@ -58,3 +58,6 @@ UltiSnips/
 
 # Sphinx documentation
 docs/_build/
+
+# Special settings
+geekshop/geekshop/*.json
