@@ -17,14 +17,14 @@ class OrderList(ListView):
     model = Order
 
     def get_queryset(self):
-        return Order.objects.all().filter(user=self.request.user)
+        return Order.objects.filter(user=self.request.user)
 
 
 def order_forming_complete(request, pk):
     order = get_object_or_404(Order, pk=pk)
     order.status = Order.SENT_TO_PROCEED
     order.save()
-    return HttpResponseRedirect(reverse('ordersapp:oreders_list'))
+    return HttpResponseRedirect(reverse('ordersapp:orders_list'))
 
 
 class OrderItemsCreate(CreateView):
@@ -56,7 +56,7 @@ class OrderItemsCreate(CreateView):
                 basket_items.delete()
             else:
                 formset = OrderFormSet()
-        data['orderformset'] = formset
+        data['orderitems'] = formset
         return data
 
     def form_valid(self, form):
