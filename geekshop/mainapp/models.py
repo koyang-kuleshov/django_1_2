@@ -2,9 +2,10 @@ from django.db import models
 
 
 class ProductCategory(models.Model):
-    name = models.CharField(verbose_name='Имя', max_length=64, unique=True)
+    name = models.CharField(verbose_name='Имя', max_length=255, unique=True)
     description = models.TextField(verbose_name='Описание', blank=True)
-    category_image = models.ImageField(upload_to='category_images', blank=True)
+    category_image = models.ImageField(max_length=255,
+                                       upload_to='category_images', blank=True)
     is_active = models.BooleanField(verbose_name='Активна', default=True)
 
     def __str__(self):
@@ -13,10 +14,11 @@ class ProductCategory(models.Model):
 
 class Product(models.Model):
     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
-    name = models.CharField(verbose_name='Имя продукта', max_length=128)
-    image = models.ImageField(upload_to='products_image', blank=True)
+    name = models.CharField(verbose_name='Имя продукта', max_length=255)
+    image = models.ImageField(max_length=255,
+                              upload_to='products_image', blank=True)
     short_desc = models.CharField(verbose_name='Краткое описание продукта',
-                                  max_length=60, blank=True)
+                                  max_length=255, blank=True)
     description = models.TextField(verbose_name='Описание продукта',
                                    blank=True)
     price = models.DecimalField(verbose_name='Цена продукта', max_digits=8,
