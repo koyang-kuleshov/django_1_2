@@ -6,6 +6,8 @@
       {% include 'basketapp/includes/inc_basket_list.html' %}
     <button class="btn btn-round form-control last"><a href="{% url 'main' %}">На главную</a>
     </button>
+    <button class="btn btn-round form-control last"><a href="{% url 'ordersapp:order_create' %}">Создать заказ</a>
+    </button>
   {% endblock %}
 
 
