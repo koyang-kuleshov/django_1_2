@@ -3,8 +3,6 @@ from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .models import ProductCategory, Product
-from basketapp.models import Basket
-
 
 
 def get_hot_product():
@@ -19,7 +17,11 @@ def get_same_products(hot_product):
 
 
 def main(request):
-    spam = list(Product.objects.all())
+    spam = list(Product.objects.all().filter(
+        is_active=True,
+        category__is_active=True).
+        select_related('category')
+    )
     random.shuffle(spam)
     product_list = spam[:4]
     trending_products = spam[4:10]

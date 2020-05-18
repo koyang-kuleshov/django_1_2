@@ -1229,6 +1229,16 @@ top: 14px;
 left: 18px;
 }
 
+.hover-description h3 {
+    margin: 0px !important;
+}
+
+.hover-category-name {
+color: #212121;
+font-size: 18px;
+font-weight: 700;
+}
+
 .hover-header {
 color: #212121;
 font-size: 22px;
@@ -1238,6 +1248,12 @@ font-weight: 700;
 .hover-p {
 color: #6c6c6c;
 font-size: 14px;
+font-weight: 300;
+}
+
+.hover-price {
+color: #6c6c6c;
+font-size: 16px;
 font-weight: 300;
 }
 
