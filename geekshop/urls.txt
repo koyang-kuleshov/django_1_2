@@ -1,0 +1,5 @@
+http://django.test/
+http://django.test/products/
+http://django.test/contacts/
+http://django.test/order/
+http://django.test/auth/edit/

@@ -3,6 +3,8 @@ from django.urls import reverse, reverse_lazy
 from django.db.models.signals import pre_save, pre_delete
 from django.dispatch import receiver
 from django.http import JsonResponse
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 
 from django.forms import inlineformset_factory
 from django.db import transaction
@@ -22,6 +24,10 @@ class OrderList(ListView):
 
     def get_queryset(self):
         return Order.objects.filter(user=self.request.user)
+
+    @method_decorator(login_required())
+    def dispatch(self, *args, **kwargs):
+        return super(ListView, self).dispatch(*args, **kwargs)
 
 
 def order_forming_complete(request, pk):
@@ -77,6 +83,10 @@ class OrderItemsCreate(CreateView):
             self.object.delete()
         return super(OrderItemsCreate, self).form_valid(form)
 
+    @method_decorator(login_required())
+    def dispatch(self, *args, **kwargs):
+        return super(CreateView, self).dispatch(*args, **kwargs)
+
 
 class OrderRead(DetailView):
     model = Order
@@ -85,6 +95,10 @@ class OrderRead(DetailView):
         context = super(OrderRead, self).get_context_data(**kwargs)
         context['title'] = 'Заказ/Просмотр'
         return context
+
+    @method_decorator(login_required())
+    def dispatch(self, *args, **kwargs):
+        return super(DetailView, self).dispatch(*args, **kwargs)
 
 
 class OrderItemsUpdate(UpdateView):
@@ -121,6 +135,10 @@ class OrderItemsUpdate(UpdateView):
         if self.object.get_total_cost() == 0:
             self.object.delete()
         return super(OrderItemsUpdate, self).form_valid(form)
+
+    @method_decorator(login_required())
+    def dispatch(self, *args, **kwargs):
+        return super(UpdateView, self).dispatch(*args, **kwargs)
 
 
 class OrderDelete(DeleteView):
