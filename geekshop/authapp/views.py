@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.core.mail import send_mail
 from django.conf import settings
 from django.db import transaction
-from django.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 
 from authapp.forms import ShopUserLoginForm, ShopUserRegisterForm, \
     ShopUserEditForm, ShopUserProfileEditForm

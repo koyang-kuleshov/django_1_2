@@ -6,7 +6,8 @@ class ProductCategory(models.Model):
     description = models.TextField(verbose_name='Описание', blank=True)
     category_image = models.ImageField(max_length=255,
                                        upload_to='category_images', blank=True)
-    is_active = models.BooleanField(verbose_name='Активна', default=True)
+    is_active = models.BooleanField(verbose_name='Активна', db_index=True,
+                                    default=True)
 
     def __str__(self):
         return self.name
@@ -25,7 +26,8 @@ class Product(models.Model):
                                 decimal_places=2, default=0)
     quantity = models.PositiveIntegerField(verbose_name='Количество товаров \
                                            на складе', default=0)
-    is_active = models.BooleanField(verbose_name='Активен', default=True)
+    is_active = models.BooleanField(verbose_name='Активен', db_index=True,
+                                    default=True)
 
     def __str__(self):
         return f'{self.name} {self.category.name}'

@@ -1,5 +1,11 @@
 http://django.test/
-http://django.test/products/
+http://django.test/auth/edit/
+http://django.test/basket/
 http://django.test/contacts/
 http://django.test/order/
-http://django.test/auth/edit/
+http://django.test/order/update/2/
+http://django.test/products/
+http://django.test/products/category/1/
+http://django.test/products/category/2/
+http://django.test/products/category/3/
+http://django.test/products/category/4/
