@@ -1,0 +1,35 @@
+{% load staticfiles %}
+{% block content %}
+    {% include 'mainapp/includes/inc_category_menu.html' %}
+    <section class="product-review padding-site">
+        <h2 class="products-title">
+        Категория: "{{ category.name|title }}"
+        </h2>
+        <div class="product-page">
+            {% for product in products %}
+                <div class="product">
+                <img src="{{ product.image.url }}" alt="{{ product.short_desc }}" class="product-img">
+                <div class="hover-description">
+                    <a href="{% url 'basket:add' product.pk %}" class="hover-button">
+                    <img src="{% static 'img/arrow.svg' %}" alt="" class="hover-button-arrow"></a>
+                    <h3 class="hover-header">{{ product.name }}</h3>
+                    <p class="hover-p">{{ product.short_desc }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="paginator">
+            {% if products.has_previous %}
+                <a href="{% url 'products:page' category.pk products.previous_page_number %}">
+                <</a>
+            {% endif %}
+                <span class="current">
+                        &nbsp;страница {{ products.number }} из {{ products.paginator.num_pages }}
+                </span>&nbsp;
+            {% if products.has_next %}
+                <a href="{% url 'products:page' category.pk products.next_page_number %}">
+                ></a>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}
