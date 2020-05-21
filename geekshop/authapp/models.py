@@ -7,7 +7,8 @@ from datetime import timedelta
 
 
 class ShopUser(AbstractUser):
-    avatar = models.ImageField(upload_to='users_avatars', blank=True)
+    avatar = models.ImageField(max_length=255,
+                               upload_to='users_avatars', blank=True)
     age = models.PositiveIntegerField(verbose_name='Возраст', default=18)
     is_active = models.BooleanField(verbose_name='Активен', default=True)
     activation_key = models.CharField(max_length=128, blank=True)

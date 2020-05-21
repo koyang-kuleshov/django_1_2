@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.core.mail import send_mail
 from django.conf import settings
 from django.db import transaction
+from django.contrib.auth.decorators import login_required
 
 from authapp.forms import ShopUserLoginForm, ShopUserRegisterForm, \
     ShopUserEditForm, ShopUserProfileEditForm
@@ -65,6 +66,7 @@ def register(request):
     return render(request, 'authapp/register.html', context=context)
 
 
+@login_required
 @transaction.atomic
 def edit(request):
     title = 'Редактирование пользователя'
