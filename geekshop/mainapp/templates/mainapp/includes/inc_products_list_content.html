@@ -3,7 +3,7 @@
     {% include 'mainapp/includes/inc_category_menu.html' %}
     <section class="product-review padding-site">
         <h2 class="products-title">
-        Категория: "{{ category.name|title }}"
+        Категория: "{{ category.name|capfirst }}"
         </h2>
         <div class="product-page">
             {% for product in products %}
