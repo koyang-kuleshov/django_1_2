@@ -5,7 +5,7 @@
   <form class="form-horizontal" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <input class="btn btn-round form-control last">
+    <input class="btn btn-round form-control last" value="Сохранить">
   </form>
   <button class="btn btn-round from-control last">
     <a href="{% url 'admin:products' category %}">

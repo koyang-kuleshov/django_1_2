@@ -19,7 +19,7 @@ urlpatterns = [
     path('categories/update/<int:pk>/', adminapp.ProductCategoryUpdateView.
          as_view(), name='category_update'),
     path('categories/delete/<int:pk>/', adminapp.ProductCategoryDeleteView.
-         as_view, name='category_delete'),
+         as_view(), name='category_delete'),
 
     path('products/create/category/<int:pk>/', adminapp.ProductCreateView.
          as_view(), name='product_create'),
