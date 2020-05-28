@@ -4,6 +4,7 @@ http://django.test/basket/
 http://django.test/contacts/
 http://django.test/order/
 http://django.test/order/update/2/
+http://django.test/order/read/2/
 http://django.test/products/
 http://django.test/products/category/1/
 http://django.test/products/category/2/
